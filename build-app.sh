@@ -9,7 +9,7 @@ echo "→ Building release binary…"
 swift build -c release
 
 APP="build/ByeBye Bytes.app"
-BIN=".build/arm64-apple-macosx/release/ByeByeBytes"
+BIN="$(swift build -c release --show-bin-path)/ByeByeBytes"
 
 # Regenerate the icon if sources exist but the .icns is missing.
 if [ ! -f Resources/AppIcon.icns ] && [ -f Scripts/generate-icon.swift ]; then
